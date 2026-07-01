@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أ.د. عبد الفضيل المشد — موجه اللغة العربية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1C1A17;
+      --ink2: #262220;
+      --paper: #F9F5EB;
+      --paper2: #efe6cf;
+      --line: #d8cba7;
+      --gold: #A38338;
+      --goldlight: #dcb75c;
+      --teal: #1A636A;
+      --tealdark: #145a60;
+      --textdark: #141210;
+      --textsoft: #5b5344;
+      --textlight: #f4ecd8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--paper);
+      color: var(--textdark);
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Aref Ruqaa', serif;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(28, 26, 23, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: all .3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+      border-bottom-color: rgba(220, 183, 92, .2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand .name {
+      font-family: 'Aref Ruqaa', serif;
+      color: var(--goldlight);
+      font-size: 1.25rem;
+    }
+
+    .brand .role {
+      color: rgba(244, 236, 216, .7);
+      font-size: .62rem;
+      letter-spacing: .15em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(244, 236, 216, .85);
+      font-size: .92rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--goldlight);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--goldlight);
+      cursor: pointer;
+    }
+
+    .menu-btn svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      list-style: none;
+      padding: 0 24px 22px;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(220, 183, 92, .15);
+    }
+
+    .mobile-menu a {
+      color: rgba(244, 236, 216, .85);
+      font-size: 1rem;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--goldlight);
+    }
+
+    /* Hero */
+    #hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--textlight);
+      padding-top: 80px;
+      background: radial-gradient(circle at 85% 15%, rgba(220, 183, 92, .10), transparent 45%), linear-gradient(180deg, #1C1A17, #262220);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: end;
+      gap: 32px;
+    }
+
+    .hero-text {
+      padding-bottom: 150px;
+      order: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--goldlight);
+      font-size: .82rem;
+      letter-spacing: .15em;
+      margin-bottom: 16px;
+    }
+
+    .hero-eyebrow .bar {
+      width: 32px;
+      height: 1px;
+      background: rgba(220, 183, 92, .7);
+    }
+
+    .hero h1 {
+      color: var(--paper);
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 .accent {
+      color: var(--goldlight);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(244, 236, 216, .85);
+      max-width: 520px;
+      margin-bottom: 35px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: all .2s;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--tealdark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(220, 183, 92, .5);
+      color: var(--goldlight);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(220, 183, 92, .1);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      order: 1;
+      padding-top: 32px;
+    }
+
+    .hero-visual .frame {
+      position: relative;
+      width: min(320px, 80%);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      filter: drop-shadow(0 24px 30px rgba(0, 0, 0, .45));
+    }
+
+    .hero-visual .underline {
+      height: 3px;
+      margin-top: -4px;
+      background: linear-gradient(90deg, transparent, var(--goldlight), transparent);
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 10%;
+      right: -6%;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 2px;
+      max-width: 160px;
+      text-align: center;
+      line-height: 1.4;
+      transform: rotate(6deg);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, .35);
+    }
+
+    /* Section heads */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section.paper {
+      background: var(--paper2);
+    }
+
+    .section.ink {
+      background: var(--ink);
+      color: var(--textlight);
+    }
+
+    .section.ink2 {
+      background: var(--ink2);
+      color: var(--textlight);
+    }
+
+    .sec-head {
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    .sec-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .82rem;
+      letter-spacing: .15em;
+      margin-bottom: 12px;
+    }
+
+    .sec-eyebrow .bar {
+      width: 32px;
+      height: 1px;
+    }
+
+    .section.paper .sec-eyebrow {
+      color: var(--teal);
+    }
+
+    .section.paper .sec-eyebrow .bar {
+      background: rgba(26, 99, 106, .6);
+    }
+
+    .section.ink .sec-eyebrow,
+    .section.ink2 .sec-eyebrow {
+      color: var(--goldlight);
+    }
+
+    .section.ink .sec-eyebrow .bar,
+    .section.ink2 .sec-eyebrow .bar {
+      background: rgba(220, 183, 92, .7);
+    }
+
+    .sec-head h2 {
+      font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+
+    .section.paper .sec-head h2 {
+      color: var(--textdark);
+    }
+
+    .sec-head p {
+      font-size: 1.02rem;
+    }
+
+    .section.paper .sec-head p {
+      color: var(--textsoft);
+    }
+
+    .section.ink .sec-head p,
+    .section.ink2 .sec-head p {
+      color: rgba(244, 236, 216, .75);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-img {
+      border: 1px solid var(--line);
+      padding: 10px;
+      background: var(--paper);
+    }
+
+    .about-img img {
+      width: 100%;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--textdark);
+    }
+
+    .about-text>p {
+      color: var(--textsoft);
+      line-height: 2;
+    }
+
+    .creds {
+      list-style: none;
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .creds li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: .98rem;
+      color: var(--textdark);
+    }
+
+    .creds li .dot {
+      color: var(--gold);
+      font-size: .7rem;
+      margin-top: 8px;
+    }
+
+    /* Timeline */
+    #path {
+      position: relative;
+    }
+
+    #path .bg {
+      position: absolute;
+      inset: 0;
+      opacity: .1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .timeline {
+      position: relative;
+      padding-right: 24px;
+      border-right: 1px solid rgba(220, 183, 92, .25);
+      margin-right: 8px;
+      display: grid;
+      gap: 32px;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item .gem {
+      position: absolute;
+      right: -34px;
+      top: 6px;
+      color: var(--goldlight);
+      font-size: 1.1rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      color: var(--goldlight);
+    }
+
+    .timeline-item p {
+      color: rgba(244, 236, 216, .75);
+      font-size: .98rem;
+    }
+
+    .contact-link1 {
+      margin-right: 650px;
+    }
+
+
+    /* Legacy */
+    .legacy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .work {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+
+    .work .corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gold);
+    }
+
+    .work .c-tl {
+      top: 8px;
+      right: 8px;
+      border-left: 0;
+      border-bottom: 0;
+    }
+
+    .work .c-tr {
+      top: 8px;
+      left: 8px;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    .work .c-bl {
+      bottom: 8px;
+      right: 8px;
+      border-left: 0;
+      border-top: 0;
+    }
+
+    .work .c-br {
+      bottom: 8px;
+      left: 8px;
+      border-right: 0;
+      border-top: 0;
+    }
+
+    .work .head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .work .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(26, 99, 106, .1);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .work .icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .work .type {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .05em;
+    }
+
+    .work h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--textdark);
+      line-height: 1.4;
+    }
+
+    .work p {
+      color: var(--textsoft);
+      font-size: .95rem;
+    }
+
+    .legacy-banner {
+      margin-top: 32px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .legacy-banner img {
+      width: 100%;
+      height: 224px;
+      object-fit: cover;
+    }
+
+    /* Media */
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .video-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(220, 183, 92, .15);
+    }
+
+    .video-thumb {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(.15) contrast(1.02);
+      transition: transform .5s;
+    }
+
+    .video-card:hover .video-thumb img {
+      transform: scale(1.05);
+    }
+
+    .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn span {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(26, 99, 106, .9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: transform .2s;
+    }
+
+    .video-card:hover .play-btn span {
+      transform: scale(1.1);
+    }
+
+    .play-btn svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+    }
+
+    .video-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 32px 12px 12px;
+      font-size: .82rem;
+      color: var(--textlight);
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .85));
+    }
+
+    /* Testimonials */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .testi {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .testi .img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .testi .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testi .body {
+      padding: 20px;
+      border-top: 1px solid rgba(216, 203, 167, .7);
+    }
+
+    .testi .body .row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .testi .body svg {
+      width: 15px;
+      height: 15px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .testi h3 {
+      font-size: 1.05rem;
+      color: var(--textdark);
+      line-height: 1.4;
+    }
+
+    .testi p {
+      color: var(--textsoft);
+      font-size: .88rem;
+    }
+
+    /* Facebook */
+    .fb-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .fb-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border: 1px solid rgba(220, 183, 92, .25);
+      border-radius: 4px;
+      color: rgba(244, 236, 216, .85);
+      transition: background .2s;
+    }
+
+    .fb-card:hover {
+      background: rgba(220, 183, 92, .1);
+    }
+
+    .fb-card svg {
+      width: 20px;
+      height: 20px;
+      color: var(--goldlight);
+      flex-shrink: 0;
+    }
+
+    .fb-card span {
+      font-size: .92rem;
+    }
+
+    /* Contact */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1px solid rgba(220, 183, 92, .4);
+      border-radius: 999px;
+      color: var(--goldlight);
+      font-size: .9rem;
+      transition: background .2s;
+    }
+
+    .contact-link:hover {
+      background: rgba(220, 183, 92, .1);
+    }
+
+    .contact-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .contact-link.muted {
+      border-color: rgba(220, 183, 92, .2);
+      color: rgba(244, 236, 216, .7);
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(216, 203, 167, .1);
+      text-align: center;
+      color: rgba(244, 236, 216, .55);
+      font-size: .82rem;
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s, transform .8s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .legacy-grid,
+      .videos,
+      .testi-grid,
+      .fb-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .legacy-grid,
+      .videos,
+      .testi-grid,
+      .fb-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand">
+        <span class="name">د. عبدالفضيل المشد</span>
+        <br>
+        <span class="role">موجه اللغة العربية</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#about">نبذة</a></li>
+        <li><a href="#path">المسيرة العلمية</a></li>
+        <li><a href="#legacy">المؤلفات</a></li>
+        <li><a href="#media">المحاضرات</a></li>
+        <li><a href="#testimonials">آراء وشهادات</a></li>
+        <li><a href="#facebook">فيسبوك</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#hero">الرئيسية</a></li>
+      <li><a href="#about">نبذة</a></li>
+      <li><a href="#path">المسيرة العلمية</a></li>
+      <li><a href="#legacy">المؤلفات</a></li>
+      <li><a href="#media">المحاضرات</a></li>
+      <li><a href="#testimonials">آراء وشهادات</a></li>
+      <li><a href="#facebook">فيسبوك</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <span class="hero-eyebrow"><span class="bar"></span>دكتوراه النحو والصرف — دار العلوم</span>
+        <h1>أ.د. عبد الفضيل <span class="accent">المشد</span></h1>
+        <br>
+        <p>موجه اللغة العربية بإدارة السادات — محافظة المنوفية. حارسٌ للفصحى، ومعلمٌ كبيرٌ أفنى عمره في خدمة النحو
+          والصرف والعروض.</p>
+          <br>
+        <div class="hero-btns">
+          <a href="#media" class="btn btn-primary">شاهد المحاضرات</a>
+          <a href="#legacy" class="btn btn-ghost">المؤلفات والأبحاث</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="frame">
+          <img src="fadeal.png" alt="الأستاذ الدكتور عبد الفضيل المشد" />
+          <div class="underline"></div>
+          <div class="hero-badge">معلم كبير للغة العربية</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section paper">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>نبذة تعريفية</span>
+        <h2>حارسُ الفصحى</h2>
+        <p>مسيرةٌ تمتد لعقودٍ في تعليم اللغة العربية وتوجيه معلميها، من دار العلوم إلى قاعات الدرس.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://media.base44.com/images/public/6a4565219e06ff22a0c6fbf9/a7e4d806b_image.png"
+            alt="الأستاذ الدكتور عبد الفضيل المشد أثناء إلقائه محاضرة" />
+        </div>
+        <div class="about-text reveal">
+          <h3>الأستاذ الدكتور / عبد الفضيل عبد العظيم عبد الفضيل المشد</h3>
+          <p>عالمٌ متخصصٌ في النحو والصرف والعروض، جمع بين أصالة العلم الشرعي واللغوي وحداثة المنهج التربوي. تدرّج في
+            المناصب التعليمية حتى أصبح موجهًا للغة العربية، وأسهم بأبحاثه ومؤلفاته في إثراء الدرس اللغوي.</p>
+          <ul class="creds">
+            <li><span class="dot">◆</span><span>ليسانس العلوم الإسلامية والعربية — كلية دار العلوم، جامعة
+                القاهرة.</span></li>
+            <li><span class="dot">◆</span><span>ماجستير النحو والصرف والعروض — كلية دار العلوم، جامعة القاهرة.</span>
+            </li>
+            <li><span class="dot">◆</span><span>دبلوم التربية العام — كلية التربية، جامعة الأزهر الشريف.</span></li>
+            <li><span class="dot">◆</span><span>دكتوراه النحو والصرف والعروض — كلية دار العلوم، جامعة القاهرة.</span>
+            </li>
+            <li><span class="dot">◆</span><span>معلم كبير للغة العربية والتربية الإسلامية بمحافظات قنا والقاهرة
+                والمنوفية.</span></li>
+            <li><span class="dot">◆</span><span>موجه اللغة العربية بإدارة السادات — محافظة المنوفية.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="path" class="section ink">
+    <div class="bg"
+      style="background-image:url('https://media.base44.com/images/public/6a4565219e06ff22a0c6fbf9/82f300d00_image.png')">
+    </div>
+    <div class="container" style="position:relative">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>المسيرة العلمية</span>
+        <h2>طريقُ العلم</h2>
+        <p>رحلةُ خبرةٍ ممتدةٍ من مقاعد دار العلوم إلى منصّة التوجيه.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal"><span class="gem">◆</span>
+          <h3>التأسيس</h3>
+          <p>ليسانس العلوم الإسلامية والعربية من كلية دار العلوم، جامعة القاهرة.</p>
+        </div>
+        <div class="timeline-item reveal"><span class="gem">◆</span>
+          <h3>التخصص</h3>
+          <p>ماجستير النحو والصرف والعروض من كلية دار العلوم، جامعة القاهرة.</p>
+        </div>
+        <div class="timeline-item reveal"><span class="gem">◆</span>
+          <h3>التأهيل التربوي</h3>
+          <p>دبلوم التربية العام من كلية التربية، جامعة الأزهر الشريف.</p>
+        </div>
+        <div class="timeline-item reveal"><span class="gem">◆</span>
+          <h3>الإتقان</h3>
+          <p>دكتوراه النحو والصرف والعروض من كلية دار العلوم، جامعة القاهرة.</p>
+        </div>
+        <div class="timeline-item reveal"><span class="gem">◆</span>
+          <h3>المُعلّم والموجّه</h3>
+          <p>معلم كبير للغة العربية، ثم موجه اللغة العربية بإدارة السادات بمحافظة المنوفية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legacy -->
+  <section id="legacy" class="section" style="background:#F9F5EB">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>الإرث الفكري</span>
+        <h2>المؤلفات والأبحاث</h2>
+        <p>آثارٌ علميةٌ في النحو والدلالة والدرس القرآني، تشهد بعمق التخصص وأصالة البحث.</p>
+      </div>
+      <div class="legacy-grid">
+        <article class="work reveal">
+          <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span
+            class="corner c-br"></span>
+          <div class="head"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg></span><span class="type">كتاب</span></div>
+          <h3>ظاهرة الحذف في ديوان الحماسة لأبي تمام</h3>
+          <p>دراسة نحوية دلالية.</p>
+        </article>
+        <article class="work reveal">
+          <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span
+            class="corner c-br"></span>
+          <div class="head"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg></span><span class="type">كتاب</span></div>
+          <h3>الآيات الكونية في القرآن الكريم</h3>
+          <p>دراسة نصية نحوية.</p>
+        </article>
+        <article class="work reveal">
+          <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span
+            class="corner c-br"></span>
+          <div class="head"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+              </svg></span><span class="type">بحث منشور</span></div>
+          <h3>ظاهرة الحذف في ديوان الحماسة</h3>
+          <p>منشور في مجلة دراسات عربية وإسلامية.</p>
+        </article>
+        <article class="work reveal">
+          <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span
+            class="corner c-br"></span>
+          <div class="head"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+              </svg></span><span class="type">بحث منشور</span></div>
+          <h3>الإحالة في الآيات الكونية في القرآن الكريم</h3>
+          <p>منشور في مجلة دراسات عربية وإسلامية.</p>
+        </article>
+      </div>
+      <div class="legacy-banner reveal">
+        <img src="arabic.png" alt="الأستاذ الدكتور عبد الفضيل المشد" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Media -->
+  <section id="media" class="section ink2">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>قاعة الدرس الرقمية</span>
+        <h2>المحاضرات المرئية</h2>
+        <p>سلاسل تعليمية على يوتيوب، تصل بالفصحى إلى كل طالبٍ أينما كان.</p>
+      </div>
+      <div class="videos" id="videos"></div>
+    </div>
+    <br>
+    <a href="https://youtu.be/9KgipYEc924" target="_blank" rel="noopener" class="contact-link contact-link1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M23 12s0-3.5-.4-5.2c-.2-1-.9-1.7-1.8-2C19 4.3 12 4.3 12 4.3s-7 0-8.8.5c-.9.2-1.6.9-1.8 2C1 8.5 1 12 1 12s0 3.5.4 5.2c.2 1 .9 1.7 1.8 2 1.8.5 8.8.5 8.8.5s7 0 8.8-.5c.9-.2 1.6-.9 1.8-2 .4-1.7.4-5.2.4-5.2zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z" />
+      </svg>
+      يوتيوب
+    </a>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section paper">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>لقطاتٌ تقديريّة</h2>
+        <p>صورٌ توثّق أثره في خدمة اللغة العربية وتكريم طلابها وتوجيه معلميها.</p>
+      </div>
+      <div class="testi-grid" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Facebook -->
+  <section id="facebook" class="section ink">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>منشورات على فيسبوك</span>
+        <h2>تقديراتٌ وآراء</h2>
+        <p>آراءٌ توضّح أثره في طلابه وفي خدمة اللغة العربيّة.</p>
+      </div>
+      <div class="fb-grid" id="fbGrid"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section ink">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-eyebrow"><span class="bar"></span>تواصل</span>
+        <h2>للتواصل ومتابعة الجديد</h2>
+        <p>تابع محاضرات الدكتور عبد الفضيل المشد ومنشوراته العلمية عبر منصاته الرسمية.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="https://www.facebook.com/share/1MoWkm7X4s/" target="_blank" rel="noopener" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z" />
+          </svg>
+          فيسبوك
+        </a>
+        <a href="https://youtu.be/9KgipYEc924" target="_blank" rel="noopener" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M23 12s0-3.5-.4-5.2c-.2-1-.9-1.7-1.8-2C19 4.3 12 4.3 12 4.3s-7 0-8.8.5c-.9.2-1.6.9-1.8 2C1 8.5 1 12 1 12s0 3.5.4 5.2c.2 1 .9 1.7 1.8 2 1.8.5 8.8.5 8.8.5s7 0 8.8-.5c.9-.2 1.6-.9 1.8-2 .4-1.7.4-5.2.4-5.2zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z" />
+          </svg>
+          يوتيوب
+        </a>
+        <span class="contact-link muted">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+          إدارة السادات التعليمية — المنوفية
+        </span>
+      </div>
+    </div>
+    <footer>© <span id="year"></span> تم تصميم الموقع بواسطة سلمى محمود</footer>
+  </section>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('open'); });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { mobileMenu.classList.remove('open'); });
+    });
+
+    // Videos
+    var videos = [
+      { id: '9KgipYEc924', title: 'من محاضرات اللغة العربية' },
+      { id: 'k7zBfcgYVdg', title: 'شرح في النحو والصرف' },
+      { id: 'ii9j7VDW6Sg', title: 'دروس في النحو' },
+      { id: '1AZIaIrJn3s', title: 'شرح الصرف والعروض' },
+      { id: '8sEev1vuHPs', title: 'محاضرة في البلاغة' },
+      { id: 'qkBJYPCHEJo', title: 'الآيات الكونية في القرآن' },
+      { id: '8U3el6gVSEw', title: 'درس في اللغة العربية' }
+    ];
+    var playIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>';
+    document.getElementById('videos').innerHTML = videos.map(function (v) {
+      return '<a class="video-card reveal" href="https://youtu.be/' + v.id + '" target="_blank" rel="noopener">' +
+        '<div class="video-thumb"><img src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" alt="' + v.title + '"/></div>' +
+        '<span class="play-btn"><span>' + playIcon + '</span></span>' +
+        '<span class="video-title">' + v.title + '</span></a>';
+    }).join('');
+
+    // Testimonials
+    var testimonials = [
+      { img: '7dfed6b28_image.png', title: 'مدارس فيوتشر الدولية — فرع مدينة السادات', desc: 'شهادة تقدير على جهوده في تعليم اللغة العربية وتوجيه الطلاب.' },
+      { img: 'dbbb4a900_image.png', title: 'مدارس فيوتشر الدولية — فرع مدينة السادات', desc: 'لقاء عمل وتعاون تربوي مع إدارة المدرسة في مدينة السادات.' },
+      { img: '56e4045e6_image.png', title: 'تكريم الطلاب الأوائل', desc: 'تكريم الطالبات المتفوقات في اللغة العربية بحضوره وإشرافه.' },
+      { img: '11ce5bfd2_image.png', title: 'تكريم الطلاب الأوائل', desc: 'تكريم الطلاب المتفوقين تقديرًا لجهودهم في دراسة اللغة العربية.' },
+      { img: '0c66e5876_image.png', title: ' تكريم الطلاب الأوائل', desc: 'تسليم شهادات التقدير للطالبات المتميزات في اللغة العربية.' },
+      { img: '052c22049_image.png', title: 'تكريم الطلاب الأوائل', desc: 'تكريم الطلاب الحاصلين على شهادات التميز في اللغة العربية.' },
+      { img: '72f3eb5a9_image.png', title: 'تكريم الطلاب الأوائل', desc: 'تكريم الطلاب الحاصلين على شهادات التميز في اللغة العربية.' },
+      { img: '215111077_image.png', title: 'مناقشة رسالة الدكتوراه', desc: 'مناقشة رسالة «الآيات الكونية في القرآن الكريم — دراسة نحوية» بكلية دار العلوم.' }
+    ];
+    var quoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2 0 0 0 0 0 0"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2"/></svg>';
+    var base = 'https://media.base44.com/images/public/6a4565219e06ff22a0c6fbf9/';
+    document.getElementById('testimonialsGrid').innerHTML = testimonials.map(function (t) {
+      return '<article class="testi reveal"><div class="img"><img src="' + base + t.img + '" alt="' + t.title + '"/></div>' +
+        '<div class="body"><div class="row">' + quoteIcon + '<h3>' + t.title + '</h3></div><p>' + t.desc + '</p></div></article>';
+    }).join('');
+
+    // Facebook
+    var posts = [
+      'https://www.facebook.com/share/p/1RgXZwT3UZ/',
+      'https://www.facebook.com/share/p/18qnBVAbmX/',
+      'https://www.facebook.com/share/p/19AQ3tLa5j/',
+      'https://www.facebook.com/share/p/18zsDKWrAC/',
+      'https://www.facebook.com/share/v/182HFAsJ7u/',
+      'https://www.facebook.com/share/p/1fiwo4DNP5/',
+      'https://www.facebook.com/share/1MoWkm7X4s/',
+      'https://www.facebook.com/share/1dRNU6haWC/'
+    ];
+    var fbIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>';
+    document.getElementById('fbGrid').innerHTML = posts.map(function (p, i) {
+      return '<a class="fb-card reveal" href="' + p + '" target="_blank" rel="noopener">' + fbIcon + '<span>منشور رقم ' + (i + 1) + '</span></a>';
+    }).join('');
+
+    // Reveal on scroll
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+  </script>
+</body>
+
+</html>
